@@ -10,8 +10,12 @@ namespace RegexDemo058
     {
         static void Main(string[] args)
         {
-            RegexSamples sample = new RegexSamples();
-            sample.ValidingThreeConsecutives();
+            //RegexSamples sample = new RegexSamples();
+            //sample.ValidingThreeConsecutives();
+            //sample.ValidingPinCode();
+
+            //ExceptionSampleDemo.TestSample();
+            ExceptionSampleDemo.TestInvalidOperationException();
             Console.ReadLine();
         }
     }
