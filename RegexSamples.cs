@@ -9,16 +9,27 @@ namespace RegexDemo058
 {
     class RegexSamples
     {
+        string PinPattern = "^[0-9]{3}[ ]*[0-9]{3}$";
+        //string PinPattern = "^[0-9]{6}$";
         string pattern = "^[0-9]*[a-zA-z]{3,}[a-zA-Z0-9]*$";
-        //string Pinpattern = "^[0-9]{6}$";
-        // string PinPattern = "^[0-9]{3}[]*[0-9]{3}$";
+        string[] pinInputs = { "123456","123 456", "7467621","A123456","A12345","1234568","123458","123C234","120234" };
         string[] inputs = { "111", "1aaa", "aa11", "bcc", "1a1aab", "1abb23a" };
-        //string[] pinInputs = { " 400088", "A400088", "400088", "400J8", "400088" };
+
+       
+
+        //string[] pinInputs = { "A400088", "400088B", "400088", "400 088" };
         public void ValidingThreeConsecutives()
         {
             Regex regex = new Regex(pattern);
             Console.WriteLine("Validing 3 consecutive samples");
             IterateLoop(inputs, regex);
+        }
+
+        public void ValidingPinCode()
+        {
+            Regex regex = new Regex(PinPattern);
+            Console.WriteLine("Validing PIN code");
+            IterateLoop(pinInputs, regex);
         }
         public static void IterateLoop(string[] arr, Regex regex)
         {
